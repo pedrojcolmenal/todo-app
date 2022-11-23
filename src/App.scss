@@ -11,3 +11,23 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
+.todo-list{
+  background-color: #fff;
+  font-size: 18px;
+  max-width: 300px;
+  margin:auto;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+
+$pinkColor: #8f1191;
+$hoverColor: #ef4bf2;
+
+@mixin button($class,$color,$hoverColor){
+  .button.#{$class}{background: $color;}
+  .button.#{$class}:hover{background: $hoverColor;}
+  .button.#{$class}:active{background: $color;}
+}
+
+@include button('pink',$pinkColor, $hoverColor)
