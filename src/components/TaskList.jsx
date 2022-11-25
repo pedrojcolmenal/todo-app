@@ -3,11 +3,12 @@ import Checkbox from "./Checkbox";
 
 const TaskList = props => {
     const {list, setList} = props;
+
     const onChangeStatus = e => {
         const {name, checked} = e.target;
         const updateList = list.map(item =>({
-            item,
-            done: item.id === name ? checked: item.done
+            ...item,
+            done: item.id === name ? checked: item.done    
         }));
         setList(updateList);
     };
@@ -27,7 +28,7 @@ const TaskList = props => {
                 {list.length ? checkbox: 'No hay tareas'}
                 {list.length ? (
                     <p>
-                        <button className="button pink" onClick={onClickRemoveItem}>Delete</button>
+                        <button className="button blue" onClick={onClickRemoveItem}>Delete</button>
                     </p>
                 ) : null }
             </div>

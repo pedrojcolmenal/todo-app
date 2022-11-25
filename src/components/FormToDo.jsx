@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const FormToDo = props =>{
-    const [description,setDescription] = useState('');
+    const [description,setDescription] = useState("");
    const {addItem} = props;
    
     const submitHandler = e => {
@@ -10,10 +10,10 @@ const FormToDo = props =>{
 
         addItem({
             done: false,
-            id:(+new Date()).toString(),
+            id:(new Date()).toString(),
             description
         });
-        setDescription('');
+        setDescription("");
     }
 
     
@@ -21,7 +21,7 @@ const FormToDo = props =>{
     return(
         <form onSubmit={submitHandler}>
             <div className="todo-list">
-                <div className="input">
+                <div className="file-input">
                     <input 
                         type="text" 
                         className="text"
